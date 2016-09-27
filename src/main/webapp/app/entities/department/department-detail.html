@@ -1,0 +1,28 @@
+
+<div>
+    <h2><span>Department</span> {{vm.department.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span>Department Id</span></dt>
+        <dd>
+            <span>{{vm.department.departmentId}}</span>
+        </dd>
+        <hr>
+        <dt><span>Department Name</span></dt>
+        <dd>
+            <span>{{vm.department.departmentName}}</span>
+        </dd>
+        <hr>
+        <dt><span>Location</span></dt>
+        <dd>
+            <a ui-sref="location-detail({id:vm.department.location.id})">{{vm.department.location.id}}</a>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

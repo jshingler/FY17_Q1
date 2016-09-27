@@ -1,0 +1,10 @@
+version: '2'
+services:
+    fy17_q1-elasticsearch:
+        container_name: fy17_q1-elasticsearch
+        image: elasticsearch:1.7.5
+        # volumes:
+        #     - ~/volumes/jhipster/FY17_Q1/elasticsearch/:/usr/share/elasticsearch/data/
+        ports:
+            - 9200:9200
+            - 9300:9300

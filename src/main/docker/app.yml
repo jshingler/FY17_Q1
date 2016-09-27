@@ -1,0 +1,21 @@
+version: '2'
+services:
+    fy17_q1-app:
+        image: fy17_q1
+        external_links:
+            - fy17_q1-mysql:mysql
+            - fy17_q1-elasticsearch:elasticsearch
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/fy17_q1?useUnicode=true&characterEncoding=utf8&useSSL=false
+            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=elasticsearch:9300
+        ports:
+            - 8080:8080
+    fy17_q1-mysql:
+        extends:
+            file: mysql.yml
+            service: fy17_q1-mysql
+    fy17_q1-elasticsearch:
+        extends:
+            file: elasticsearch.yml
+            service: fy17_q1-elasticsearch
