@@ -1,0 +1,11 @@
+---
+applications:
+- name: FY17_Q1
+  memory: 1024M
+  instances: 1
+  host: jsfy17_q1
+  path: ./build/libs/fy-17-q-1-0.0.1-SNAPSHOT.war
+  env:
+    JBP_CONFIG_OPEN_JDK_JRE: '[memory_calculator: {memory_sizes: {metaspace: 256M..}}]'
+  services:
+   - jsFY17_Q1_DB
